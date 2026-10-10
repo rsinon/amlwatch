@@ -1,0 +1,38 @@
+# Example amlwatch configuration. Any key left out keeps its default.
+# Thresholds here are illustrative; calibrate them to your own book.
+
+reporting_threshold = 10000
+
+structuring_lower_ratio = 0.8
+structuring_window_days = 7
+structuring_min_count = 3
+
+passthrough_min_amount = 3000
+passthrough_window_hours = 48
+passthrough_min_ratio = 0.9
+passthrough_min_episodes = 3
+passthrough_min_share = 0.5
+
+fanin_window_days = 7
+fanin_min_senders = 12
+fanin_max_amount = 3000
+
+# Placeholder codes. Replace with the jurisdictions your policy lists.
+high_risk_countries = ["ZZ", "ZY"]
+high_risk_min_amount = 1000
+high_risk_min_count = 2
+
+roundtrip_min_amount = 2000
+roundtrip_window_days = 14
+roundtrip_max_length = 4
+roundtrip_min_ratio = 0.85
+
+anomaly_weight = 0.3
+anomaly_review_quantile = 0.99
+
+[weights]
+structuring = 0.6
+pass_through = 0.5
+fan_in = 0.5
+high_risk_corridor = 0.4
+round_trip = 0.7
